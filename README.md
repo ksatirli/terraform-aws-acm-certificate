@@ -85,7 +85,7 @@ Available outputs are listed below, along with their description
 |---------------|-------------------------------------------------|
 | `id`          | ID of the Certificate                           |
 | `arn`         | ARN of the Certificate                          |
-| `domain_name` | Domain name for which the certificate is issued |                            |
+| `domain_name` | Domain name for which the certificate is issued |
 
 ## Author Information
 
