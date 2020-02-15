@@ -59,8 +59,6 @@ Additional usage examples are available in the `examples` directory via [GitHub]
 
 ### Module Variables
 
-Available variables are listed below, along with their default values:
-
 | Name | Description | Type | Default |
 |------|-------------|------|---------|
 | domain_name | Domain name for Certificate | `string` | n/a |
@@ -71,8 +69,6 @@ Available variables are listed below, along with their default values:
 | use_default_tags | Toggle to enable creation of default tags for ACM Certificate, containing Terraform Workspace identifier | `bool` | `true` |
 
 ### Module Outputs
-
-Available outputs are listed below, along with their description
 
 | Name | Description |
 |------|-------------|
