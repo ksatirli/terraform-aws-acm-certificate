@@ -10,8 +10,8 @@
   - [Requirements](#requirements)
   - [Dependencies](#dependencies)
   - [Usage](#usage)
-    - [Module Variables](#module-variables)
-    - [Module Outputs](#module-outputs)
+    - [Inputs](#inputs)
+    - [Outputs](#outputs)
   - [Author Information](#author-information)
   - [License](#license)
 
@@ -57,7 +57,7 @@ Then, fetch the module from the [Terraform Registry](https://registry.terraform.
 
 Additional usage examples are available in the `examples` directory via [GitHub](https://github.com/operatehappy/terraform-aws-acm-certificate/tree/master/examples).
 
-### Module Variables
+### Inputs
 
 | Name | Description | Type | Default |
 |------|-------------|------|---------|
@@ -68,7 +68,7 @@ Additional usage examples are available in the `examples` directory via [GitHub]
 | tags | Mapping of Tags of Certificate | `map` | `{}` |
 | use_default_tags | Toggle to enable creation of default tags for ACM Certificate, containing Terraform Workspace identifier | `bool` | `true` |
 
-### Module Outputs
+### Outputs
 
 | Name | Description |
 |------|-------------|
