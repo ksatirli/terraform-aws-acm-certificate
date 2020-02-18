@@ -1,6 +1,6 @@
 # Terraform Module: AWS ACM Certificate
 
-> This repository is a [Terraform](https://terraform.io/) Module for managing AWS [ACM Certificates](https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html), using DNS-validation.
+> Terraform Module for managing AWS [ACM Certificates](https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html), using DNS-validation.
 
 ## Table of Contents
 
