@@ -48,7 +48,7 @@ module "acm-certificate" {
   tags                                = {
     website = "https://example.com/"
   }
-  
+
   route53_zone_id                     = "Z3P5QSUBK4POTI"
 }
 ```
@@ -85,7 +85,7 @@ Available outputs are listed below, along with their description
 |---------------|-------------------------------------------------|
 | `id`          | ID of the Certificate                           |
 | `arn`         | ARN of the Certificate                          |
-| `domain_name` | Domain name for which the certificate is issued |                            |
+| `domain_name` | Domain name for which the certificate is issued |
 
 ## Author Information
 
