@@ -48,7 +48,7 @@ module "acm-certificate" {
   tags                                = {
     website = "https://example.com/"
   }
-  
+
   route53_zone_id                     = "Z3P5QSUBK4POTI"
 }
 ```
