@@ -1,4 +1,8 @@
-# (2020-02-24)
+# 1.0.0 (2020-06-17)
+
+* Simplify Resource Naming (#4) ([39362a9](https://github.com/operatehappy/terraform-aws-acm-certificate/commit/39362a9)), closes [#4](https://github.com/operatehappy/terraform-aws-acm-certificate/issues/4)
+
+## (2020-02-24)
 
 * Adds GitHub actions (#2) ([7898b7a](https://github.com/operatehappy/terraform-aws-acm-certificate/commit/7898b7a)), closes [#2](https://github.com/operatehappy/terraform-aws-acm-certificate/issues/2)
 * updates docs format (#3) ([2bcebe7](https://github.com/operatehappy/terraform-aws-acm-certificate/commit/2bcebe7)), closes [#3](https://github.com/operatehappy/terraform-aws-acm-certificate/issues/3)
