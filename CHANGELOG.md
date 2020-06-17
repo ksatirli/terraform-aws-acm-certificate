@@ -7,4 +7,3 @@
 
 * adds base files ([32eeffc](https://github.com/operatehappy/terraform-aws-acm-certificate/commit/32eeffc))
 * Create resources (#1) ([9389617](https://github.com/operatehappy/terraform-aws-acm-certificate/commit/9389617)), closes [#1](https://github.com/operatehappy/terraform-aws-acm-certificate/issues/1)
-
