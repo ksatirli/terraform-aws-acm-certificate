@@ -17,7 +17,7 @@
 
 ## Overview
 
-![Terraform Module: AWS ACM Certificate](./overview.png "Terraform Module: AWS ACM Certificate")
+![Terraform Module: AWS ACM Certificate](https://github.com/operatehappy/terraform-aws-acm-certificate/blob/master/overview.png "Terraform Module: AWS ACM Certificate")
 
 ## Requirements
 
@@ -32,7 +32,7 @@ This module depends on a correctly configured [AWS Provider](https://www.terrafo
 Add the module to your Terraform resources like so:
 
 ```hcl
-module "acm-certificate" {
+module "acm_certificate" {
   source  = "operatehappy/acm-certificate/aws"
   version = "1.0.0"
 
@@ -44,12 +44,12 @@ module "acm-certificate" {
   domain_name            = var.domain_name
   alternate_domain_names = var.alternate_domain_names
 
-  use_default_tags                    = true
-  tags                                = {
+  use_default_tags = true
+  tags = {
     website = "https://example.com/"
   }
 
-  route53_zone_id                     = "Z3P5QSUBK4POTI"
+  route53_zone_id = "Z3P5QSUBK4POTI"
 }
 ```
 
@@ -78,7 +78,7 @@ Additional usage examples are available in the `examples` directory via [GitHub]
 
 ## Author Information
 
-This module is maintained by the contributors listed on [GitHub](https://github.com/operatehappy/terraform-aws-acm-certificate/graphs/contributors)
+This module is maintained by the contributors listed on [GitHub](https://github.com/operatehappy/terraform-aws-acm-certificate/graphs/contributors).
 
 Development of this module was sponsored by [Operate Happy](https://github.com/operatehappy).
 
@@ -86,7 +86,7 @@ Development of this module was sponsored by [Operate Happy](https://github.com/o
 
 Licensed under the Apache License, Version 2.0 (the "License").
 
-You may obtain a copy of the License at [apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
+You may obtain a copy of the License at [apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an _"AS IS"_ basis, without WARRANTIES or conditions of any kind, either express or implied.
 
