@@ -19,7 +19,7 @@ resource "aws_route53_record" "this" {
   ttl     = 60
 
   records = [
-    aws_acm_certificate.certificate.domain_validation_options[count.index].resource_record_value
+    aws_acm_certificate.this.domain_validation_options[count.index].resource_record_value
   ]
 
   allow_overwrite = true // NOTE: this is required for Certificate Validation
