@@ -32,7 +32,7 @@ This module depends on a correctly configured [AWS Provider](https://www.terrafo
 Add the module to your Terraform resources like so:
 
 ```hcl
-module "acm-certificate" {
+module "acm_certificate" {
   source  = "operatehappy/acm-certificate/aws"
   version = "1.0.0"
 
@@ -44,12 +44,12 @@ module "acm-certificate" {
   domain_name            = var.domain_name
   alternate_domain_names = var.alternate_domain_names
 
-  use_default_tags                    = true
-  tags                                = {
+  use_default_tags = true
+  tags = {
     website = "https://example.com/"
   }
 
-  route53_zone_id                     = "Z3P5QSUBK4POTI"
+  route53_zone_id = "Z3P5QSUBK4POTI"
 }
 ```
 
