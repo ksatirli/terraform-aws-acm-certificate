@@ -17,7 +17,7 @@
 
 ## Overview
 
-![Terraform Module: AWS ACM Certificate](./overview.png "Terraform Module: AWS ACM Certificate")
+![Terraform Module: AWS ACM Certificate](https://github.com/operatehappy/terraform-aws-acm-certificate/blob/master/overview.png "Terraform Module: AWS ACM Certificate")
 
 ## Requirements
 
