@@ -11,7 +11,7 @@ resource "aws_acm_certificate" "this" {
 }
 
 resource "aws_route53_record" "this" {
-  count = length([var.domain_name, var.alternate_domain_names])
+  count = length(concat([var.domain_name], var.alternate_domain_names))
 
   zone_id = var.route53_zone_id
   name    = aws_acm_certificate.this.domain_validation_options[count.index].resource_record_name
