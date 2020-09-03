@@ -34,7 +34,7 @@ Add the module to your Terraform resources like so:
 ```hcl
 module "acm_certificate" {
   source  = "operatehappy/acm-certificate/aws"
-  version = "1.0.0"
+  version = "1.1.0"
 
   providers = {
     // NOTE: ACM Certificates for usage with CloudFront need to be created in the `us-east-1` region, see https://amzn.to/2TW2J16
