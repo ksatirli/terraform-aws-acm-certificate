@@ -1,4 +1,8 @@
-# 1.0.1 (2020-06-24)
+# 1.1.0 (2020-09-04)
+
+* Updates provider version (#6) ([e554774](https://github.com/operatehappy/terraform-aws-acm-certificate/commit/e554774)), closes [#6](https://github.com/operatehappy/terraform-aws-acm-certificate/issues/6)
+
+## 1.0.1 (2020-06-24)
 
 * Use `concat` before using `length` (#5) ([24a9373](https://github.com/operatehappy/terraform-aws-acm-certificate/commit/24a9373)), closes [#5](https://github.com/operatehappy/terraform-aws-acm-certificate/issues/5)
 
