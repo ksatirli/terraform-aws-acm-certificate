@@ -1,4 +1,9 @@
-# 1.1.0 (2020-09-04)
+# 1.1.1 (2020-09-15)
+
+* Update count method for ACM Certificate validation #7
+  (#7) ([1038209](https://github.com/operatehappy/terraform-aws-acm-certificate/commit/1038209)), closes [#8](https://github.com/operatehappy/terraform-aws-acm-certificate/issues/8)
+
+## 1.1.0 (2020-09-04)
 
 * Updates provider version (#6) ([e554774](https://github.com/operatehappy/terraform-aws-acm-certificate/commit/e554774)), closes [#6](https://github.com/operatehappy/terraform-aws-acm-certificate/issues/6)
 

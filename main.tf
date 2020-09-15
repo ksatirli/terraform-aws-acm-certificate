@@ -11,18 +11,20 @@ resource "aws_acm_certificate" "this" {
 }
 
 resource "aws_route53_record" "this" {
-  count = length(concat([var.domain_name], var.alternate_domain_names))
-
-  zone_id = var.route53_zone_id
-  name    = aws_acm_certificate.this.domain_validation_options[count.index].resource_record_name
-  type    = aws_acm_certificate.this.domain_validation_options[count.index].resource_record_type
-  ttl     = 60
-
-  records = [
-    aws_acm_certificate.this.domain_validation_options[count.index].resource_record_value
-  ]
+  for_each = {
+    for certificate in aws_acm_certificate.this.domain_validation_options : certificate.domain_name => {
+      name   = certificate.resource_record_name
+      record = certificate.resource_record_value
+      type   = certificate.resource_record_type
+    }
+  }
 
   allow_overwrite = true // NOTE: this is required for Certificate Validation
+  name            = each.value.name
+  records         = [each.value.record]
+  ttl             = 60
+  type            = each.value.type
+  zone_id         = var.route53_zone_id
 
   depends_on = [
     aws_acm_certificate.this
@@ -30,10 +32,8 @@ resource "aws_route53_record" "this" {
 }
 
 resource "aws_acm_certificate_validation" "this" {
-  count = length(aws_route53_record.this)
-
   certificate_arn         = aws_acm_certificate.this.arn
-  validation_record_fqdns = aws_route53_record.this.*.fqdn
+  validation_record_fqdns = [for record in aws_route53_record.this : record.fqdn]
 
   timeouts {
     create = "60m"
