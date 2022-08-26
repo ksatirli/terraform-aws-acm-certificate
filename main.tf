@@ -32,10 +32,6 @@ resource "aws_route53_record" "main" {
   ttl             = 60
   type            = each.value.type
   zone_id         = var.route53_zone_id
-
-  #  depends_on = [
-  #    aws_acm_certificate.main
-  #  ]
 }
 
 # see https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/acm_certificate_validation
