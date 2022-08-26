@@ -2,7 +2,7 @@
 
 > Terraform Module for managing AWS [ACM Certificates](https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html), using DNS-validation.
 
-> **Notes**
+> **Warning**
 > This module has reached _End-of-Life_ status. A re-built version will be available via [ksatirli/terraform-aws-acm-certificate](https://github.com/ksatirli/terraform-aws-acm-certificate).
 
 ## Table of Contents
