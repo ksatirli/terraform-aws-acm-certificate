@@ -1,7 +1,17 @@
 terraform {
-  required_version = ">= 0.13.0"
-
+  # see https://www.terraform.io/docs/language/settings/index.html#specifying-provider-requirements
   required_providers {
-    aws = ">= 3.4.0"
+    # see https://registry.terraform.io/providers/hashicorp/aws/4.26.0/
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 4.26.0, < 5.0.0"
+
+      configuration_aliases = [
+        aws.certificate
+      ]
+    }
   }
+
+  # see https://www.terraform.io/docs/language/settings/index.html#specifying-a-required-terraform-version
+  required_version = ">= 1.1.0"
 }
