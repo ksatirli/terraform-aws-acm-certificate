@@ -15,11 +15,9 @@ jobs:
         # The Snyk IaC GitHub Action currently only supports single files (via the `file` attribute in `with`).
         # To work around this, a GitHub Actions Strategy is used to provide the files that should be tested.
         terraform_files:
-          - "./examples/basic/providers.tf"
           - "./examples/basic/main.tf"
-          - "./examples/basic/variables.tf"
+          - "./examples/basic/providers.tf"
           - "./examples/basic/terraform.tf"
-          - "./examples/basic/outputs.tf"
 
     steps:
       - name: Checkout Repository

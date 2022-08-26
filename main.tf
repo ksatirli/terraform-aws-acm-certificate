@@ -8,6 +8,11 @@ resource "aws_acm_certificate" "main" {
   options {
     certificate_transparency_logging_preference = var.enable_certificate_transparency_log ? "ENABLED" : "DISABLED"
   }
+
+  # see https://www.terraform.io/language/meta-arguments/lifecycle
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 # see https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record
