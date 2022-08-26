@@ -19,59 +19,30 @@
 ## Requirements
 
 * Amazon Web Services (AWS) [Account](https://aws.amazon.com/account/)
-* Terraform `1.0.x` or newer.
+* Terraform `1.1.x` or newer.
 
 ## Usage
 
-Add the module to your Terraform resources like so:
-
-```hcl
-module "acm_certificate" {
-  source  = "ksatirli/acm-certificate/aws"
-  version = "2.0.0"
-
-  providers = {
-    # NOTE: ACM Certificates for usage with CloudFront need to be created in the `us-east-1` region, see https://amzn.to/2TW2J16
-    aws.certificate = aws.us-east-1
-  }
-
-  domain_name            = var.domain_name
-  alternate_domain_names = var.alternate_domain_names
-
-  use_default_tags = true
-  tags = {
-    website = "https://example.com/"
-  }
-
-  route53_zone_id = "Z3P5QSUBK4POTI"
-}
-```
-
-Then, fetch the module from the [Terraform Registry](https://registry.terraform.io/modules/ksatirli/acm-certificate) using `terraform get`.
-
-Additional usage examples are available in the `examples` directory via [GitHub](https://github.com/ksatirli/terraform-aws-acm-certificate/tree/main/examples).
-
-## Usage
+For examples, see the [./examples](https://github.com/ksatirli/terraform-aws-acm-certificate/tree/main/examples) directory.
 
 <!-- BEGIN_TF_DOCS -->
 ### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| route53_zone_id | ID of Route 53 Zone to use for Certificate Validation | `string` | n/a | yes |
-| alternate_domain_names | Alternate Domain Names for Certificate | `list` | `[]` | no |
+| route53_zone_id | ID of Route 53 Zone to use for Certificate Validation. | `string` | n/a | yes |
+| alternate_domain_names | Alternate Domain Names for Certificate | `list(string)` | `[]` | no |
 | domain_name | Domain name for Certificate | `string` | `null` | no |
-| enable_certificate_transparency_log | Toggle to enable Certificate Transparency Log | `bool` | `true` | no |
-| tags | Mapping of Tags of Certificate | `map` | `{}` | no |
-| use_default_tags | Toggle to enable creation of default tags for ACM Certificate, containing Terraform Workspace identifier | `bool` | `true` | no |
+| enable_certificate_transparency_log | Toggle to enable Certificate Transparency Log. | `bool` | `true` | no |
+| tags | Mapping of Tags of Certificate | `map(string)` | `{}` | no |
 
 ### Outputs
 
 | Name | Description |
 |------|-------------|
-| arn | ARN of the Certificate |
-| domain_name | Domain name for which the certificate is issued |
-| id | ID of the Certificate |
+| aws_acm_certificate | Exported Attributes for `aws_acm_certificate.main`. |
+| aws_acm_certificate_validation | Exported Attributes for `aws_acm_certificate_validation.main`. |
+| aws_route53_record | Exported Attributes for `aws_route53_record.main`. |
 <!-- END_TF_DOCS -->
 
 ## Author Information

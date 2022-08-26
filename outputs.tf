@@ -1,23 +1,14 @@
-output "id" {
-  value       = aws_acm_certificate.this.id
-  description = "ID of the Certificate"
-  depends_on = [
-    aws_acm_certificate.this
-  ]
+output "aws_acm_certificate" {
+  description = "Exported Attributes for `aws_acm_certificate.main`."
+  value       = aws_acm_certificate.main
 }
 
-output "arn" {
-  value       = aws_acm_certificate.this.arn
-  description = "ARN of the Certificate"
-  depends_on = [
-    aws_acm_certificate.this
-  ]
+output "aws_route53_record" {
+  description = "Exported Attributes for `aws_route53_record.main`."
+  value       = aws_route53_record.main
 }
 
-output "domain_name" {
-  value       = aws_acm_certificate.this.domain_name
-  description = "Domain name for which the certificate is issued"
-  depends_on = [
-    aws_acm_certificate.this
-  ]
+output "aws_acm_certificate_validation" {
+  description = "Exported Attributes for `aws_acm_certificate_validation.main`."
+  value       = aws_acm_certificate_validation.main
 }
