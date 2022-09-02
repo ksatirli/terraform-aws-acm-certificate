@@ -4,13 +4,17 @@
 
 ## Table of Contents
 
-- [AWS ACM Certificate](#aws-acm-certificate)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-  - [Requirements](#requirements)
-  - [Usage](#usage)
-  - [Author Information](#author-information)
-  - [License](#license)
+<!-- TOC -->
+* [AWS ACM Certificate](#aws-acm-certificate)
+  * [Table of Contents](#table-of-contents)
+  * [Overview](#overview)
+  * [Requirements](#requirements)
+  * [Usage](#usage)
+    * [Inputs](#inputs)
+    * [Outputs](#outputs)
+  * [Author Information](#author-information)
+  * [License](#license)
+<!-- TOC -->
 
 ## Overview
 
