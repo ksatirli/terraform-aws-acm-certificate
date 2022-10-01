@@ -1,5 +1,7 @@
 # see https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/acm_certificate
 resource "aws_acm_certificate" "main" {
+  provider = "aws.certificate"
+
   domain_name               = var.domain_name
   subject_alternative_names = var.alternate_domain_names
   validation_method         = "DNS"
