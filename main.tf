@@ -42,9 +42,13 @@ resource "aws_route53_record" "main" {
 
 # see https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/acm_certificate_validation
 resource "aws_acm_certificate_validation" "main" {
+  provider = aws.certificate
+
   certificate_arn = aws_acm_certificate.main.arn
 
-  validation_record_fqdns = [for record in aws_route53_record.main : record.fqdn]
+  validation_record_fqdns = [
+    for record in aws_route53_record.main : record.fqdn
+  ]
 
   timeouts {
     create = "60m"
