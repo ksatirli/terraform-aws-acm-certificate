@@ -1,5 +1,7 @@
 # see https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/acm_certificate
 resource "aws_acm_certificate" "main" {
+  provider = aws.certificate
+
   domain_name               = var.domain_name
   subject_alternative_names = var.alternate_domain_names
   validation_method         = "DNS"
@@ -9,7 +11,7 @@ resource "aws_acm_certificate" "main" {
     certificate_transparency_logging_preference = var.enable_certificate_transparency_log ? "ENABLED" : "DISABLED"
   }
 
-  # see https://www.terraform.io/language/meta-arguments/lifecycle
+  # see https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle
   lifecycle {
     create_before_destroy = true
   }
@@ -28,16 +30,25 @@ resource "aws_route53_record" "main" {
   # this is required for Certificate Validation
   allow_overwrite = true
   name            = each.value.name
-  records         = [each.value.record]
-  ttl             = 60
-  type            = each.value.type
-  zone_id         = var.route53_zone_id
+
+  records = [
+    each.value.record
+  ]
+
+  ttl     = 60
+  type    = each.value.type
+  zone_id = var.route53_zone_id
 }
 
 # see https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/acm_certificate_validation
 resource "aws_acm_certificate_validation" "main" {
-  certificate_arn         = aws_acm_certificate.main.arn
-  validation_record_fqdns = [for record in aws_route53_record.main : record.fqdn]
+  provider = aws.certificate
+
+  certificate_arn = aws_acm_certificate.main.arn
+
+  validation_record_fqdns = [
+    for record in aws_route53_record.main : record.fqdn
+  ]
 
   timeouts {
     create = "60m"
