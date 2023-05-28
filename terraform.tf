@@ -4,7 +4,7 @@ terraform {
     # see https://registry.terraform.io/providers/hashicorp/aws/4.33.0/
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 4.33.0, < 5.0.0"
+      version = ">= 4.33.0, < 6.0.0"
 
       configuration_aliases = [
         aws.certificate
